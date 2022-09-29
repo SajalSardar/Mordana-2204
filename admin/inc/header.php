@@ -1,3 +1,18 @@
+<?php 
+session_start();
+if(!isset($_SESSION['login_user'])){
+    header('location:http://localhost/Moderna/auth/login.php');
+}
+
+
+function siteUrl(){
+    $bassfol = explode('/', $_SERVER['REQUEST_URI']);
+    $protocol = explode('/', $_SERVER["SERVER_PROTOCOL"]);
+    return strtolower($protocol['0'])."://" . $_SERVER['SERVER_NAME']."/".$bassfol[1];
+
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en"
       dir="ltr">
@@ -14,16 +29,16 @@
         <meta name="robots" content="noindex">
 
         <!-- Perfect Scrollbar -->
-        <link type="text/css" href="http://localhost/Moderna/admin/css/perfect-scrollbar.css" rel="stylesheet">
+        <link type="text/css" href="<?= siteUrl()?>/admin/css/perfect-scrollbar.css" rel="stylesheet">
 
         <!-- App CSS -->
-        <link type="text/css" href="http://localhost/Moderna/admin/css/app.css" rel="stylesheet">
+        <link type="text/css" href="<?= siteUrl()?>/admin/css/app.css" rel="stylesheet">
 
         <!-- Material Design Icons -->
-        <link type="text/css" href="http://localhost/Moderna/admin/css/vendor-material-icons.css" rel="stylesheet">
+        <link type="text/css" href="<?= siteUrl()?>/admin/css/vendor-material-icons.css" rel="stylesheet">
 
         <!-- Font Awesome FREE Icons -->
-        <link type="text/css"  href="http://localhost/Moderna/admin/css/vendor-fontawesome-free.css" rel="stylesheet">
+        <link type="text/css"  href="<?= siteUrl()?>/admin/css/vendor-fontawesome-free.css" rel="stylesheet">
 
 
     </head>

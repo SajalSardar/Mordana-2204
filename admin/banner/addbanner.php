@@ -26,16 +26,25 @@ require_once "../inc/header.php";
                     <p class="text-muted">FlowDash supports all of Bootstrap's default form styling in addition to a handful of new input types and features. Please <a href="https://getbootstrap.com/docs/4.1/components/forms/" target="_blank">read the official documentation</a> for a full list of options from Bootstrap's core library.</p>
                 </div>
                 <div class="col-lg-8 card-form__body card-body">
-                    <form>
+                    <form method="POST" action="bannerinsert.php">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Your email:</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter your email address ..">
+                            <label for="exampleInputEmail1">Banner Title:</label>
+                            <input type="text" name="title" class="form-control" id="exampleInputEmail1" placeholder="Enter Title">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">Your password:</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your password ..">
+                            <label>Banner Description:</label>
+                            <textarea name="description"   class="form-control" rows="10" ></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <div class="form-group">
+                            <label >Button Text:</label>
+                            <input type="text" name="btn_text" class="form-control" placeholder="Enter Button Text">
+                        </div>
+                        <div class="form-group">
+                            <label >Button url:</label>
+                            <input type="text" name="btn_url" class="form-control" placeholder="Enter Button url">
+                        </div>
+                        
+                        <button type="submit" name="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
             </div>

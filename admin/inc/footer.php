@@ -30,7 +30,7 @@
                                             id="banner_menu">
                                             <li class="sidebar-menu-item">
                                                 <a class="sidebar-menu-button"
-                                                   href="banner/addbanner.php">
+                                                   href="<?= siteUrl()?>/admin/banner/addbanner.php">
                                                     <span class="sidebar-menu-text">Add Banner</span>
                                                 </a>
                                             </li>
