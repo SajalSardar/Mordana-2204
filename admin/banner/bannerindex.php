@@ -1,5 +1,14 @@
 <?php 
 require_once "../inc/header.php";
+require_once '../../db.php';
+$query = "SELECT * FROM banners";
+
+$result = mysqli_query($conn, $query);
+
+if(mysqli_num_rows($result)> 0){
+    $datas = mysqli_fetch_all($result, true);
+}
+
 ?>
 <div class="container-fluid page__heading-container">
     <div class="page__heading d-flex align-items-end">
@@ -17,7 +26,42 @@ require_once "../inc/header.php";
 </div>
 
 <div class="container-fluid page__container">
-
+    <div class="row">
+        <div class="col-12">
+            <table class="table myTable">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Description</th>
+                        <th>Button Text</th>
+                        <th>Button Url</th>
+                        <th>Stastus</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        foreach($datas as $data){
+                    ?>
+                    <tr>
+                        <td><?= $data['id']?></td>
+                        <td><?= $data['title']?></td>
+                        <td><?= $data['description']?></td>
+                        <td><?= $data['btn_text']?></td>
+                        <td><?= $data['btn_url']?></td>
+                        <td><?= $data['status']?></td>
+                        <td>
+                            <a href="#">View</a>
+                        </td>
+                    </tr>
+                    <?php 
+                        }
+                    ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 <?php 
 require_once "../inc/footer.php";

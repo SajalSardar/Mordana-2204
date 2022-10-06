@@ -40,7 +40,7 @@ function siteUrl(){
         <!-- Font Awesome FREE Icons -->
         <link type="text/css"  href="<?= siteUrl()?>/admin/css/vendor-fontawesome-free.css" rel="stylesheet">
 
-
+        <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
     </head>
 
     <body class="layout-default">

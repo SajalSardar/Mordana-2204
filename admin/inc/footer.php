@@ -36,11 +36,44 @@
                                             </li>
                                             <li class="sidebar-menu-item">
                                                 <a class="sidebar-menu-button"
-                                                   href="#">
+                                                   href="<?= siteUrl()?>/admin/banner/bannerindex.php">
                                                     <span class="sidebar-menu-text">All Banners</span>
                                                 </a>
                                             </li>
                                         </ul>
+                                    </li>
+
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button"
+                                           data-toggle="collapse"
+                                           href="#service_menu">
+                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">slideshow</i>
+                                            <span class="sidebar-menu-text">Services</span>
+                                            <span class="ml-auto sidebar-menu-toggle-icon"></span>
+                                        </a>
+                                        <ul class="sidebar-submenu collapse"
+                                            id="service_menu">
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button"
+                                                   href="<?= siteUrl()?>/admin/service/addservice.php">
+                                                    <span class="sidebar-menu-text">Add Service</span>
+                                                </a>
+                                            </li>
+                                            <li class="sidebar-menu-item">
+                                                <a class="sidebar-menu-button"
+                                                   href="<?= siteUrl()?>/admin/service/serviceindex.php">
+                                                    <span class="sidebar-menu-text">All Service</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li class="sidebar-menu-item">
+                                        <a class="sidebar-menu-button" href="<?= siteUrl()?>/admin/whyus/index.php">
+                                            <i class="sidebar-menu-icon sidebar-menu-icon--left material-icons">slideshow</i>
+                                            <span class="sidebar-menu-text">Why Us</span>
+                                            
+                                        </a>
                                     </li>
 
                                     <li class="sidebar-menu-item">
@@ -152,7 +185,13 @@
         <!-- App Settings (safe to remove) -->
         <script src="http://localhost/Moderna/admin/js/app-settings.js"></script>
 
-        
+        <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
+        <script>
+            $(document).ready( function () {
+                $('.myTable').DataTable();
+            } );
+        </script>
 
     </body>
 
